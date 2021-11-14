@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Listagem de pessoas utilizando o Spring Boot</title>
+</head>
+ 
+<body>
+  <h1>Lista de pessoas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>email</th>
+        <th>telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="pessoa: ${pessoas}">  
+        <td th:text="${pessoa.nome}"></td>
+        <td th:text="${pessoa.cpf}"></td>
+        <td th:text="${pessoa.email}"></td>
+        <td th:text="${pessoa.telefone}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
