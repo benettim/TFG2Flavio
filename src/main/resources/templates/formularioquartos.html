@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro!</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<form action="#" method="post" th:action="@{/formularioquartos}" th:object="${quarto}">
+	
+	<- private String numero;
+	
+	private float tamanho;
+	
+	private String tipo;
+	
+	private String opcionais;
+	
+	private int n_camas;
+	
+	private float valor; ->
+		<table>
+			<tr>
+				<td>Número</td>
+				<td> 
+					<input type="text" th:field="*{numero}" /> 
+				</td>
+			</tr>
+			<tr>
+				<td>Tamanho</td>
+				<td> 
+					<input type="number" th:field="*{tamanho}" />
+				</td>
+			</tr>
+			<tr>
+			<tr>
+				<td>Tipo</td>
+				<td> 
+					<input type="text" th:field="*{tipo}" /> 
+				</td>
+			</tr>
+			<tr>
+				<td>Opcionais</td>
+				<td> 
+					<input type="text" th:field="*{opcionais}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Número de camas</td>
+				<td> 
+					<input type="number" th:field="*{n_camas}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Valor</td>
+				<td> 
+					<input type="number" th:field="*{valor}" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" >Salvar</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

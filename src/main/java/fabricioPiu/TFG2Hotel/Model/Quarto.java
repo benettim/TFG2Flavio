@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class Quarto{
 	
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String numero;
 	@Column(nullable=false)
 	private float tamanho;
@@ -19,9 +18,9 @@ public class Quarto{
 	private String tipo;
 	@Column(nullable=false)
 	private String opcionais;
-	
+	@Column(nullable=false)
 	private int n_camas;
-	
+	@Column(nullable=false)
 	private float valor;
 	
 	public String getNumero() {

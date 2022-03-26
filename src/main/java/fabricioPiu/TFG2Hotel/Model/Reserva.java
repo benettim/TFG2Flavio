@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,10 +22,11 @@ public class Reserva {
 	private Date data_entrada;
 	@Column(nullable=false)
 	private Date data_saida;
-	@Column(nullable=false)
-	private long fk_pessoa;
-	@Column(nullable=false)
-	private String fk_quarto;
+	
+	@ManyToOne
+	private Pessoa pessoa;
+	@ManyToOne
+	private Quarto quarto;
 	public long getId() {
 		return id;
 	}
@@ -43,18 +45,19 @@ public class Reserva {
 	public void setData_saida(Date data_saida) {
 		this.data_saida = data_saida;
 	}
-	public long getFk_pessoa() {
-		return fk_pessoa;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-	public void setFk_pessoa(long fk_pessoa) {
-		this.fk_pessoa = fk_pessoa;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-	public String getFk_quarto() {
-		return fk_quarto;
+	public Quarto getQuarto() {
+		return quarto;
 	}
-	public void setFk_quarto(String fk_quarto) {
-		this.fk_quarto = fk_quarto;
+	public void setQuarto(Quarto quarto) {
+		this.quarto = quarto;
 	}
+	
 	
 	
 }

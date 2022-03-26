@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Listagem de quartos utilizando o Spring Boot</title>
+</head>
+ 
+<body>
+  <h1>Lista de quartos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Tamanho</th>
+        <th>Tipo</th>
+        <th>Opcionais</th>
+        <th>Numero de camas</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="quarto: ${quartos}">  
+        <td th:text="${quarto.numero}"></td>
+        <td th:text="${quarto.tamanho}"></td>
+        <td th:text="${quarto.tipo}"></td>
+        <td th:text="${quarto.opcionais}"></td>
+        <td th:text="${quarto.n_camas}"></td>
+        <td th:text="${quarto.valor}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

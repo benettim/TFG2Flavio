@@ -52,8 +52,20 @@ public class PessoaResource {
 		return null;
 	}
 	
-	@DeleteMapping("/pessoas")
+	/*@DeleteMapping("/pessoas/{cpf}")
+	public void deletaPessoa(@PathVariable(value="cpf") String cpf) {
+		Pessoa pessoa = pessoarepository.findByCpf(cpf);
+		pessoarepository.delete(pessoa);
+	}*/
+	
+	/*@DeleteMapping("/pessoas")
 	public void deletaPessoa(@RequestBody Pessoa pessoa) {
+		pessoarepository.delete(pessoa);
+	}*/
+	
+	@DeleteMapping("/pessoas/{cpf}")
+	public void deletaPessoa(@PathVariable(value = "cpf") String cpf) {
+		Pessoa pessoa = pessoarepository.findByCpf(cpf);
 		pessoarepository.delete(pessoa);
 	}
 	
