@@ -204,7 +204,7 @@ public class WebController {
 	    return view;
 	}
     
-    @GetMapping("/formularioquartos")
+    /*@GetMapping("/formularioquartos")
     public String showform(Quarto quarto){
         
         return "formularioquartos";
@@ -221,7 +221,7 @@ public class WebController {
     	System.out.println(quartoSalvo.getBody().getNumero());
     	
         return "index";
-    }
+    }*/
 	
 	
 }
