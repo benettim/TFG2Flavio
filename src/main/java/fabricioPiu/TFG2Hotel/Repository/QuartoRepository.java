@@ -20,8 +20,9 @@ public interface QuartoRepository extends JpaRepository<Quarto, String>{
 	public Quarto findByNumero(String id);
 	
 	@Query(value = " select t.* from tb_quarto as t "
-			+ " left join tb_reserva as r on t.numero = r.fk_quarto "
-			+ " where r.fk_quarto is null or (r.data_entrada >= :dt1 and r.data_saida <= :dt2)", 
+			+ "left join tb_reserva as r on t.numero = r.fk_quarto "
+			+ " where r.fk_quarto is null or not ((r.data_entrada <= :dt1 and r.data_saida >= :dt1)"
+			+ "or (r.data_entrada <= :dt2 and r.data_saida >= :dt2))", 
 			nativeQuery=true)
 	public List<Quarto>findAllAvailableRooms(@Param("dt1") Date localDate, @Param("dt2") Date localDate2);
 	//public List<Quarto>findAllAvailableRooms(@Param("dt1") String localDate, @Param("dt2") String localDate2);
