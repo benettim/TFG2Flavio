@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Gestão de reservas</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-2">
+		<h1>Sistema de Gestão de reservas</h1>
+		<hr>
+		<h2>Editar reserva</h2>
+		<form action="#" th:action="@{/formularioreservas/salvar}" th:object="${reserva}" method="POST">
+			<input type="hidden" id="id" th:field="*{id}">
+			<input type="text" th:field="*{data_entrada}" placeholder="data de entrada" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{data_saida}" placeholder="data de saída" class="form-control mb-4 col-4">
+			<select th:field="*{pessoa}">
+ 				<option th:each="pessoa : ${listaPessoas}"
+            		th:value="${pessoa.id}"
+            		th:text="${pessoa.nome}">
+            	</option>
+			</select><br/>
+			<select th:field="*{quarto}">
+ 				<option th:each="quarto : ${listaQuartos}"
+            		th:value="${quarto.numero}"
+            		th:text="${quarto.numero}">
+            	</option>
+			</select>
+      		<!--  <input type="text" th:field="*{pessoa}" placeholder="nome" class="form-control mb-4 col-4">
+      		<input type="text" th:field="*{quarto}" placeholder="numero do quarto" class="form-control mb-4 col-4">-->
+			
+
+			<button type="submit" class="btn btn-info col-2">Salvar</button>
+		</form>
+		
+		<hr>
+		<a th:href="@{/formularioreservas}">Retornar para a lista de reservas</a>
+	</div>
+</body>
+</html> 

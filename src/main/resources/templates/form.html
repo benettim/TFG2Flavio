@@ -16,6 +16,7 @@
 		<h2>Editar Pessoa</h2>
 		<form action="#" th:action="@{/formulariopessoas/salvar}" th:object="${pessoa}" method="POST">
 			<input type="hidden" id="id" th:field="*{id}">
+			
 			<input type="text" th:field="*{nome}" placeholder="Nome" class="form-control mb-4 col-4">
       		<input type="text" th:field="*{cpf}" placeholder="CPF" class="form-control mb-4 col-4">
       		<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
